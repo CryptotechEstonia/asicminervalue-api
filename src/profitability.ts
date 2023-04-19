@@ -5,6 +5,10 @@ import Api from './api'
 export const PROFITABILITY_TABLE = 'table#datatable_profitability'
 
 export namespace ProfitabilityList {
+	export interface Parameters {
+		models?: string[]
+	}
+
 	export type Result = Profitability[]
 
 	export interface Profitability {
@@ -87,12 +91,23 @@ export default class ProfitabilityApi {
 		this.api = api
 	}
 
-	async list(): Promise<ProfitabilityList.Result> {
+	async list(parameters?: ProfitabilityList.Parameters): Promise<ProfitabilityList.Result> {
 		const dom = await this.api.request('/')
 
 		const table = dom.querySelector(PROFITABILITY_TABLE) as MyHTMLElement
 		const tbody = table.childNodes[1]
 
-		return tbody.childNodes.map(parseRow)
+		const profitability = tbody.childNodes.map(parseRow)
+
+		if (parameters === undefined)
+			return profitability
+
+		const { models } = parameters
+
+		if (models === undefined)
+			return profitability
+
+		return profitability
+			.filter(({ model }) => models.includes(model) === true)
 	}
 }
