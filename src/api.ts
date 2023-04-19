@@ -23,9 +23,7 @@ export default class Api {
 
 	readonly coins: ProfitabilityApi
 
-	constructor(token: string) {
-		this.token = token
-
+	constructor() {
 		this.headers = { }
 
 		this.config = {
