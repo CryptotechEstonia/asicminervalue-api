@@ -21,7 +21,7 @@ export default class Api {
 	private readonly headers: RawAxiosRequestHeaders
 	private readonly config: AxiosRequestConfig
 
-	readonly coins: ProfitabilityApi
+	readonly profitability: ProfitabilityApi
 
 	constructor() {
 		this.headers = { }
@@ -30,7 +30,7 @@ export default class Api {
 			headers: this.headers
 		}
 
-		this.coins = new ProfitabilityApi(this)
+		this.profitability = new ProfitabilityApi(this)
 	}
 
 	async request(endpoint: Endpoint, parameters?: RequestParameters) {

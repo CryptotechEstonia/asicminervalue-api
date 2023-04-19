@@ -16,7 +16,7 @@ class Api {
         this.config = {
             headers: this.headers
         };
-        this.coins = new profitability_1.default(this);
+        this.profitability = new profitability_1.default(this);
     }
     async request(endpoint, parameters) {
         const url = this.base + endpoint;

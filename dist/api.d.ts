@@ -7,7 +7,7 @@ export default class Api {
     private readonly base;
     private readonly headers;
     private readonly config;
-    readonly coins: ProfitabilityApi;
+    readonly profitability: ProfitabilityApi;
     constructor();
     request(endpoint: Endpoint, parameters?: RequestParameters): Promise<import("node-html-parser").HTMLElement>;
 }
