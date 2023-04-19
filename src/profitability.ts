@@ -74,7 +74,7 @@ const parseRow = ({ childNodes: nodes }: MyHTMLElement): ProfitabilityList.Profi
 	name: nodes[0].querySelector('a')!.childNodes[2].innerText.split(' (')[0],
 	model: nodes[0].querySelector('a')!.childNodes[2].innerText,
 	producer: nodes[0].querySelector('a')!.childNodes[0].innerText,
-	full: nodes[0].attrs['data-search'].replaceAll('undefined', '').trim(),
+	full: nodes[0].attrs['data-search'].replace('undefined', '').trim(),
 	release: nodes[1].attrs['data-sort'],
 	hashrate: Number(nodes[2].attrs['data-sort']),
 	power: Number(nodes[3].attrs['data-sort']),
