@@ -16,8 +16,7 @@ export type Endpoint = ProfitabilityEndpoint
 
 // Default export
 export default class Api {
-	private readonly base: string = 'https://api.livecoinwatch.com'
-	private readonly token: string
+	private readonly base: string = 'https://www.asicminervalue.com'
 
 	private readonly headers: RawAxiosRequestHeaders
 	private readonly config: AxiosRequestConfig
