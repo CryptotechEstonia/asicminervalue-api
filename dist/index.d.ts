@@ -1,4 +1,4 @@
 import Api from "./api";
-import CoinsApi from "./coins";
-export { Api, CoinsApi };
+import ProfitabilityApi from "./profitability";
+export { Api, ProfitabilityApi };
 //# sourceMappingURL=index.d.ts.map

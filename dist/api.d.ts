@@ -1,16 +1,15 @@
-import type { CoinsEndpoint, CoinsMap } from './coins';
-import CoinsApi from './coins';
+import type { ProfitabilityEndpoint } from './profitability';
+import ProfitabilityApi from './profitability';
 export interface RequestParameters extends Object {
 }
-export type RequestResponse = CoinsMap.Response;
-export type Endpoint = CoinsEndpoint;
+export type Endpoint = ProfitabilityEndpoint;
 export default class Api {
     private readonly base;
     private readonly token;
     private readonly headers;
     private readonly config;
-    readonly coins: CoinsApi;
+    readonly coins: ProfitabilityApi;
     constructor(token: string);
-    request<T>(endpoint: Endpoint, parameters: RequestParameters): Promise<T>;
+    request(endpoint: Endpoint, parameters?: RequestParameters): Promise<import("node-html-parser").HTMLElement>;
 }
 //# sourceMappingURL=api.d.ts.map
