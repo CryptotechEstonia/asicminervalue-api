@@ -10,9 +10,8 @@ const node_html_parser_1 = require("node-html-parser");
 const profitability_1 = __importDefault(require("./profitability"));
 // Default export
 class Api {
-    constructor(token) {
-        this.base = 'https://api.livecoinwatch.com';
-        this.token = token;
+    constructor() {
+        this.base = 'https://www.asicminervalue.com';
         this.headers = {};
         this.config = {
             headers: this.headers
