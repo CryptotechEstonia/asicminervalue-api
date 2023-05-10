@@ -20,7 +20,7 @@ class ProfitabilityApi {
         this.api = api;
     }
     async list(parameters) {
-        const dom = await this.api.request('/', parameters?.request);
+        const dom = await this.api.request('/', parameters === null || parameters === void 0 ? void 0 : parameters.request);
         const table = dom.querySelector(exports.PROFITABILITY_TABLE);
         const tbody = table.childNodes[1];
         const profitability = tbody.childNodes.map(parseRow);
