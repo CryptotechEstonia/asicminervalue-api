@@ -12,7 +12,9 @@ const profitability_1 = __importDefault(require("./profitability"));
 class Api {
     constructor() {
         this.base = 'https://www.asicminervalue.com';
-        this.headers = {};
+        this.headers = {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        };
         this.config = {
             headers: this.headers
         };

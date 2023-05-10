@@ -1,12 +1,13 @@
 import type { HTMLElement } from 'node-html-parser'
 
-import Api from './api'
+import Api, { RequestParameters } from './api'
 
 export const PROFITABILITY_TABLE = 'table#datatable_profitability'
 
 export namespace ProfitabilityList {
 	export interface Parameters {
 		models?: string[]
+		request?: RequestParameters
 	}
 
 	export type Result = Profitability[]
@@ -92,7 +93,7 @@ export default class ProfitabilityApi {
 	}
 
 	async list(parameters?: ProfitabilityList.Parameters): Promise<ProfitabilityList.Result> {
-		const dom = await this.api.request('/')
+		const dom = await this.api.request('/', parameters?.request)
 
 		const table = dom.querySelector(PROFITABILITY_TABLE) as MyHTMLElement
 		const tbody = table.childNodes[1]

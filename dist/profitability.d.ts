@@ -1,9 +1,10 @@
 import type { HTMLElement } from 'node-html-parser';
-import Api from './api';
+import Api, { RequestParameters } from './api';
 export declare const PROFITABILITY_TABLE = "table#datatable_profitability";
 export declare namespace ProfitabilityList {
     interface Parameters {
         models?: string[];
+        request?: RequestParameters;
     }
     type Result = Profitability[];
     interface Profitability {
